@@ -40,7 +40,7 @@
         type="submit"
         variant="primary"
         style="width:100px;display:block;"
-        class="mx-auto w-100"
+        class="mx-auto w-100 custom-button"
         >Login</b-button
       >
       <div class="mt-2">
@@ -57,9 +57,6 @@
     >
       Login failed: {{ form.submitError }}
     </b-alert>
-    <!-- <b-card class="mt-3" header="Form Data Result">
-      <pre class="m-0">{{ form }}</pre>
-    </b-card> -->
   </div>
 </template>
 
@@ -95,20 +92,17 @@ export default {
       try {
         
         const response = await this.axios.post(
-          // "https://test-for-3-2.herokuapp.com/user/Login",
           this.$root.store.server_domain +"/Login",
-          // "http://132.72.65.211:80/Login",
-          // "http://132.73.84.100:80/Login",
 
           {
             username: this.form.username,
             password: this.form.password
           }
         );
-        // console.log(response);
-        // this.$root.loggedIn = true;
-        console.log(this.$root.store.login);
-        this.$root.store.login(this.form.username);
+
+        let firstname = await this.axios.get(
+        this.$root.store.server_domain +"/users/privateName")
+        this.$root.store.shared_data.login(this.form.username, firstname);
         this.$router.push("/");
       } catch (err) {
         console.log(err.response);
@@ -116,14 +110,11 @@ export default {
       }
     },
     onLogin() {
-      // console.log("login method called");
       this.form.submitError = undefined;
       this.$v.form.$touch();
       if (this.$v.form.$anyError) {
         return;
       }
-      // console.log("login method go");
-
       this.Login();
     }
   }
@@ -133,4 +124,16 @@ export default {
 .container {
   max-width: 400px;
 }
+
+.custom-button {
+  background-color: #37713f;
+  border-color: #37713f;
+  color: white; 
+}
+
+.custom-button:hover {
+  background-color: #965b38ab;
+  border-color: #965b38ab;
+}
+
 </style>

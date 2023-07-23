@@ -52,10 +52,9 @@
       </div>
 </template>
 
-
 <script>
 export default {
-  name: "RecipeView",
+  name: "MyRecipePage",
 
   data() {
     return {
@@ -71,7 +70,7 @@ export default {
 
       try {
         response = await this.axios.get(
-          this.$root.store.server_domain + `/recipes/${this.$route.params.recipeId}`
+          this.$root.store.server_domain + `/users/myRecipes/${this.$route.params.recipeId}`
         );
         if (response.status !== 200) this.$router.replace("/NotFound");
       } catch (error) {
@@ -93,7 +92,6 @@ export default {
         )
       }
 
-
     } catch (error) {
       console.log(error);
     }
@@ -108,7 +106,6 @@ export default {
   margin-bottom: 5px;
   margin-top: 5px;
 }
-
 
 
 </style>

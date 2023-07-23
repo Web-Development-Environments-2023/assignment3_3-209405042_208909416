@@ -1,0 +1,162 @@
+*
+{
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+#vegaanB
+{
+  background-color: rgb(72, 216, 132);
+}
+#vegiB
+{
+  background-color: rgb(34, 105, 64);
+}
+#glutenFree
+{
+  background-color: rgb(182, 133, 78);
+}
+#containGluten
+{
+  background-color: rgb(119, 108, 96);
+}
+
+@font-face {
+  font-family: 'Harry Potter';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./harrypotter-ov4z-webfont.woff') format('woff');
+}
+.title
+{
+  font-family: 'Harry Potter';
+  text-align: center;
+  font-size: 2.5vw;
+  margin-top: 1vw;
+  text-shadow: 0 0 8px #d1bfbf;
+}
+
+body
+{
+  background-image: url('./background.png');
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 90%;
+  background-attachment: fixed;
+}
+
+.labels
+{
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  font-family: "Harry Potter";
+
+}
+
+.labels2 {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  display: block;
+  font-family: "Harry Potter";
+  left: 40%;
+}
+
+.image-recipe {
+  width: 100%;
+  height: 75%;
+  margin-bottom: 20px;
+  border-radius: 2%;
+  border: 3px solid#27374e;
+}
+
+.content-container {
+  text-align: center;
+}
+
+.instructions {
+  margin-top: 2%;
+}
+
+.center-background {
+  background-color: rgba(167, 211, 236, 0.25) ;
+  display: inline-block;
+  padding-left: 2%;
+  padding-right: 2%;
+  width: 34%;
+}
+
+
+.table-container {
+  text-align: left; 
+  display: flex;
+  margin-left: 12%;
+}
+
+.ingredient-table {
+  border-collapse: collapse;
+}
+
+.ready{
+  font-size:22px;
+}
+
+.step-container {
+  margin-left: 12%
+}
+
+.step {
+  text-align: left;
+}
+
+
+.header:hover 
+{
+    background-color: #304e7a;
+
+}
+
+.header:focus
+{
+    background-color: #304e7a;
+
+}
+
+.collapse
+{
+  background-color: rgba(167, 211, 236, 0.185) ; 
+
+}
+
+.header
+{
+  background-color: #8cb9d4bd
+}
+
+.card 
+{
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0;
+}
+.floating {  
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+
+
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    35%  { transform: translate(15px, 15px); }
+    65%  { transform: translate(50px, 30px); }
+    85%  { transform: translate(30px, 40px); }
+    to   { transform: translate(0, -0px); }    
+}
